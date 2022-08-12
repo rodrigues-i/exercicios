@@ -6,9 +6,9 @@ namespace CrudClientes.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UserController: ControllerBase
+public class UsersController: ControllerBase
 {
-    public UserController()
+    public UsersController()
     {
 
     }
@@ -16,4 +16,11 @@ public class UserController: ControllerBase
     [HttpGet]
     public ActionResult<List<User>> GetAll() =>
         UserService.GetAll();
+    [HttpGet("{id}")]
+    public ActionResult<User> Get(int id) {
+        var user = UserService.GetById(id);
+        if(user == null)
+            return NotFound();
+        return user;
+    }
 }
