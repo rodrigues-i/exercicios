@@ -35,4 +35,17 @@ public class UsersController: ControllerBase
         UserService.Add(user);
         return CreatedAtAction(nameof(Create), new {id = user.id}, user);
     }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, User user)
+    {
+        if(user.id != id)
+            return BadRequest();
+        var existingUser = UserService.GetById(id);
+        if(existingUser is null)
+            return NotFound();
+        UserService.Update(user);
+
+        return NoContent();
+    }
 }

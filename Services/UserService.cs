@@ -26,4 +26,11 @@ public static class UserService
         user.id = nextId++;
         Users.Add(user);
     }
+
+    public static void Update(User user) {
+        var index = Users.FindIndex(u => u.id == user.id);
+        if(index == -1)
+            return;
+        Users[index] = user;
+    }
 }
