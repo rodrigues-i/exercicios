@@ -1,6 +1,6 @@
 namespace CrudClientes.Models;
 
-public class Cliente
+public class User
 {
     // o id deveria ser uma string
     public int id {get; set;}
