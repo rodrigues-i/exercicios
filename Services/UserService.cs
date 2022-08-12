@@ -33,4 +33,13 @@ public static class UserService
             return;
         Users[index] = user;
     }
+
+    public static void Delete(int id)
+    {
+        var user = GetById(id);
+        if(user is null)
+            return;
+        Users.Remove(user);
+
+    }
 }
