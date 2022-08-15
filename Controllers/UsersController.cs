@@ -1,8 +1,6 @@
 using CrudClientes.Models;
-using CrudClientes.Services;
 using Microsoft.AspNetCore.Mvc;
 using CrudClientes.Repository;
-using Microsoft.EntityFrameworkCore;
 
 namespace CrudClientes.Controllers;
 
@@ -25,7 +23,7 @@ public class UsersController: ControllerBase
         
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<User>> Get(int id)
+    public async Task<ActionResult<User>> Get(Guid id)
     {
         var Dbuser = await _repository.GetUserById(id);
         if(Dbuser == null)
@@ -45,7 +43,7 @@ public class UsersController: ControllerBase
         user.firstName = user.firstName.Trim();
         if(user.surname != null)
             user.surname = user.surname.Trim();
-
+        
         user.creationDate = DateTime.Now;
         _repository.AddUser(user);
         
@@ -55,7 +53,7 @@ public class UsersController: ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<User>> Update(int id, User user)
+    public async Task<ActionResult<User>> Update(Guid id, User user)
     {
         if(user.age == 0)
             return BadRequest("Attribute age is required");
@@ -83,7 +81,7 @@ public class UsersController: ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(Guid id)
     {
        var Dbuser = await _repository.GetUserById(id);
        if(Dbuser == null)
