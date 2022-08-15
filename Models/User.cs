@@ -8,4 +8,6 @@ public class User
     public string? surname {get; set;}
     public int age {get; set; }
 
+    public DateTime creationDate { get; set; }
+
 }
