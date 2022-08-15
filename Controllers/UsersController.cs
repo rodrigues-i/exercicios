@@ -64,13 +64,16 @@ public class UsersController: ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        var user = UserService.GetById(id);
-        if(user is null)
-            return NotFound();
+       var Dbuser = await _repository.GetUserById(id);
+       if(Dbuser == null)
+            return BadRequest("User not found");
         
-        UserService.Delete(id);
-        return NoContent();
+        _repository.DeleteUser(Dbuser);
+
+        return await _repository.SaveChangesAsync()
+            ? Ok("User successfully removed")
+            : BadRequest("Erro while deleting user");
     }
 }

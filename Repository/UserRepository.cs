@@ -20,7 +20,7 @@ public class UserRepository : IUserRepository
 
     public void DeleteUser(User user)
     {
-        throw new NotImplementedException();
+        _context.Remove(user);
     }
 
     public async Task<User?> GetUserById(int id)
