@@ -4,7 +4,7 @@ namespace CrudClientes.Repository;
 
 public interface IUserRepository
 {
-    Task<IEnumerable<User>> GetUsers();
+    Task<List<User>> GetUsers();
     Task<User> GetUserById(int id);
     void AddUser(User user);
     void UpdateUser(User user);

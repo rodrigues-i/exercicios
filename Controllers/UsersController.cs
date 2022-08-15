@@ -1,6 +1,8 @@
 using CrudClientes.Models;
 using CrudClientes.Services;
 using Microsoft.AspNetCore.Mvc;
+using CrudClientes.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudClientes.Controllers;
 
@@ -8,14 +10,19 @@ namespace CrudClientes.Controllers;
 [Route("[controller]")]
 public class UsersController: ControllerBase
 {
-    public UsersController()
-    {
+    private readonly IUserRepository _repository;
 
+    public UsersController(IUserRepository repository)
+    {
+        _repository = repository;
     }
 
     [HttpGet]
-    public ActionResult<List<User>> GetAll() =>
-        UserService.GetAll();
+    public async Task<ActionResult<List<User>>> GetAll()
+    {
+        return await _repository.GetUsers();
+    }
+        
 
     [HttpGet("{id}")]
     public ActionResult<User> Get(int id)
@@ -27,13 +34,13 @@ public class UsersController: ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Create(User user)
+    public async Task<IActionResult> Create(User user)
     {
-        if(user.age < 1)
-            return BadRequest();
-
-        UserService.Add(user);
-        return CreatedAtAction(nameof(Create), new {id = user.id}, user);
+        user.creationDate = DateTime.Now;
+        _repository.AddUser(user);
+        return await _repository.SaveChangesAsync()
+        ? Ok("User created successfully")
+        : BadRequest("Error while trying to add new user");
     }
 
     [HttpPut("{id}")]

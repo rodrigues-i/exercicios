@@ -28,9 +28,9 @@ public class UserRepository : IUserRepository
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<User>> GetUsers()
+    public async Task<List<User>> GetUsers()
     {
-        throw new NotImplementedException();
+        return await _context.Users.ToListAsync();
     }
 
     public async Task<bool> SaveChangesAsync()
