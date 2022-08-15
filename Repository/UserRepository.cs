@@ -23,9 +23,9 @@ public class UserRepository : IUserRepository
         throw new NotImplementedException();
     }
 
-    public Task<User> GetUserById(int id)
+    public async Task<User?> GetUserById(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Users.FindAsync(id);
     }
 
     public async Task<List<User>> GetUsers()

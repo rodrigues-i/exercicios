@@ -25,12 +25,13 @@ public class UsersController: ControllerBase
         
 
     [HttpGet("{id}")]
-    public ActionResult<User> Get(int id)
+    public async Task<ActionResult<User>> Get(int id)
     {
-        var user = UserService.GetById(id);
-        if(user == null)
-            return NotFound();
-        return user;
+        var Dbuser = await _repository.GetUserById(id);
+        if(Dbuser == null)
+            return NotFound("User not found");
+        
+        return Ok(Dbuser);
     }
 
     [HttpPost]
