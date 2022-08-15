@@ -45,16 +45,22 @@ public class UsersController: ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult Update(int id, User user)
+    public async Task<ActionResult<User>> Update(int id, User user)
     {
-        if(user.id != id)
-            return BadRequest();
-        var existingUser = UserService.GetById(id);
-        if(existingUser is null)
-            return NotFound();
-        UserService.Update(user);
+        var Dbuser = await _repository.GetUserById(id);
+        if(Dbuser == null)
+            return BadRequest("User not found");
+        
+        Dbuser.firstName = user.firstName ?? Dbuser.firstName;
+        Dbuser.surname = user.surname ?? Dbuser.surname;
+        Dbuser.age = user.age ?? Dbuser.age;
 
-        return NoContent();
+         _repository.UpdateUser(Dbuser);
+
+         return await _repository.SaveChangesAsync()
+         ? Ok("User updated successfully")
+         : BadRequest("Erro while updating user");
+        
     }
 
     [HttpDelete("{id}")]
