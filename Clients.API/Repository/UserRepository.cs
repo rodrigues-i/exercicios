@@ -1,8 +1,8 @@
-using CrudClientes.Models;
-using CrudClientes.Data;
+using Clients.API.Models;
+using Clients.API.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace CrudClientes.Repository;
+namespace Clients.API.Repository;
 
 public class UserRepository : IUserRepository
 {

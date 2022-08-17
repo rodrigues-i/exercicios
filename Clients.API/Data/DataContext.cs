@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using CrudClientes.Models;
+using Clients.API.Models;
 
-namespace CrudClientes.Data;
+namespace Clients.API.Data;
 
 public class DataContext : DbContext
 {

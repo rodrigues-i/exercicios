@@ -1,6 +1,6 @@
-using CrudClientes.Models;
+using Clients.API.Models;
 
-namespace CrudClientes.Repository;
+namespace Clients.API.Repository;
 
 public interface IUserRepository
 {

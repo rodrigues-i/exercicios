@@ -1,5 +1,5 @@
-using CrudClientes.Data;
-using CrudClientes.Repository;
+using Clients.API.Data;
+using Clients.API.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

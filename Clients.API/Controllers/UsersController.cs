@@ -1,8 +1,8 @@
-using CrudClientes.Models;
+using Clients.API.Models;
 using Microsoft.AspNetCore.Mvc;
-using CrudClientes.Repository;
+using Clients.API.Repository;
 
-namespace CrudClientes.Controllers;
+namespace Clients.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
