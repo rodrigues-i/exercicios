@@ -14,12 +14,20 @@ public class TestUsersControllers
     public async Task GetAll_OnSuccess_ReturnsStatusCode200()
     {
         // Arrange
-        var mockIUserRepository = new Mock<IUserRepository>();
-        mockIUserRepository
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
             .Setup(service => service.GetUsers())
-            .ReturnsAsync(new List<User>());
+            .ReturnsAsync(new List<User>() {
+                new User {
+                    id = Guid.NewGuid(),
+                    firstName = "Gustavo",
+                    surname = "Lima",
+                    age = 15,
+                    creationDate = DateTime.Now
+                }
+            });
 
-        var sut = new UsersController(mockIUserRepository.Object);
+        var sut = new UsersController(mockUserRepository.Object);
 
         // Act
         var result = await sut.GetAll();
@@ -33,17 +41,42 @@ public class TestUsersControllers
     public async Task GetAll_OnSuccess_Invokes_UserRepository_ExactlyOnce()
     {
         // Arrange
-        var mockIUserRepository = new Mock<IUserRepository>();
-        mockIUserRepository
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
             .Setup(service => service.GetUsers())
             .ReturnsAsync(new List<User>());
 
-        var sut = new UsersController(mockIUserRepository.Object);
+        var sut = new UsersController(mockUserRepository.Object);
 
         // Act
         var result = await sut.GetAll();
 
         // Assert
-        mockIUserRepository.Verify(service => service.GetUsers(), Times.Exactly(1));
+        mockUserRepository.Verify(service => service.GetUsers(), Times.Exactly(1));
+    }
+
+    [Fact]
+    public async Task GetAll_OnSuccess_ReturnsListOfUser()
+    {
+        // Arrange
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUsers())
+            .ReturnsAsync(new List<User>() {
+                new User {
+                    id = Guid.NewGuid(),
+                    firstName = "Gustavo",
+                    surname = "Lima",
+                    age = 15,
+                    creationDate = DateTime.Now
+                }});
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.GetAll();
+
+        // Assert
+        result.Should().BeOfType<OkObjectResult>();
     }
 }

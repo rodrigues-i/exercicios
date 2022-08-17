@@ -18,7 +18,11 @@ public class UsersController: ControllerBase
     [HttpGet]
     public async Task<ActionResult> GetAll()
     {
-        return Ok(await _repository.GetUsers());
+        var users = await _repository.GetUsers();
+        if(!users.Any())
+            return NotFound();
+            
+        return Ok(users);
     }
         
 
