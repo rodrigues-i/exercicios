@@ -16,9 +16,9 @@ public class UsersController: ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<User>>> GetAll()
+    public async Task<ActionResult> GetAll()
     {
-        return await _repository.GetUsers();
+        return Ok(await _repository.GetUsers());
     }
         
 
