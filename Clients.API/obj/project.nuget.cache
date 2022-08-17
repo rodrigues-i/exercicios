@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M4qFb04mR9rYHp4SmU9t4rERb7I0WU8GdubZNRs1sPb9ZIO42YmXf69qhI+QhYtXFjLrW8QFpDq1CwjBUpOCUw==",
+  "dgSpecHash": "BybX4wUF0nMhKs3vOgOU8wdguLF9ScjhDHHtKQr6otKET19IeIqhVPbZs1ZPcwX6Lw70u7v96ylaMlNxRwnuxw==",
   "success": true,
-  "projectFilePath": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/CrudClientes.csproj",
+  "projectFilePath": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/CrudClientes.csproj",
   "expectedPackageFiles": [
     "/home/rodrigues/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/rodrigues/.nuget/packages/microsoft.entityframeworkcore/6.0.8/microsoft.entityframeworkcore.6.0.8.nupkg.sha512",

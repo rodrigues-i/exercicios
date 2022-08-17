@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/rodrigues/Documentos/projetos-c#/CrudClientes/CrudClientes.csproj": {}
+    "/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/CrudClientes.csproj": {}
   },
   "projects": {
-    "/home/rodrigues/Documentos/projetos-c#/CrudClientes/CrudClientes.csproj": {
+    "/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/CrudClientes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/CrudClientes.csproj",
+        "projectUniqueName": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/CrudClientes.csproj",
         "projectName": "CrudClientes",
-        "projectPath": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/CrudClientes.csproj",
+        "projectPath": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/CrudClientes.csproj",
         "packagesPath": "/home/rodrigues/.nuget/packages/",
-        "outputPath": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/obj/",
+        "outputPath": "/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rodrigues/.nuget/NuGet/NuGet.Config"
