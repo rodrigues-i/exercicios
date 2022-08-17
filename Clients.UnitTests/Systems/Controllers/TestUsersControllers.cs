@@ -78,5 +78,25 @@ public class TestUsersControllers
 
         // Assert
         result.Should().BeOfType<OkObjectResult>();
+        var objectResult = (OkObjectResult)result;
+        objectResult.Value.Should().BeOfType<List<User>>();
+    }
+
+    [Fact]
+    public async Task GetAll_OnNoUsersFound_ReturnsStatusCode404()
+    {
+        // Arrange
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUsers())
+            .ReturnsAsync(new List<User>());
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.GetAll();
+        result.Should().BeOfType<NotFoundResult>();
+        var objectResult = (NotFoundResult)result;
+        objectResult.StatusCode.Should().Be(404);
     }
 }
