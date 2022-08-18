@@ -131,4 +131,100 @@ public class TestUsersControllers
         var objectResult = (NotFoundObjectResult)result;
         objectResult.StatusCode.Should().Be(404);
     }
+
+    [Fact]
+    public async Task Create_OnSuccess_CreatesNewUser()
+    {
+        // Arrange
+        var newUser = UsersFixture.GetTestUser(Guid.NewGuid());
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.AddUser(newUser));
+        mockUserRepository
+            .Setup(service => service.SaveChangesAsync())
+            .ReturnsAsync(true);
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Create(newUser);
+
+        // Assert
+        result.Should().BeOfType<OkObjectResult>();
+        var objectResult = (OkObjectResult) result;
+        objectResult.StatusCode.Should().Be(200);
+    }
+
+    [Fact]
+    public async Task Create_OnSuccess_InokesAddUser()
+    {
+        // Arrange
+        var newUser = UsersFixture.GetTestUser(Guid.NewGuid());
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.AddUser(newUser));
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Create(newUser);
+
+        // Assert
+        mockUserRepository.Verify(service => service.AddUser(newUser), Times.Once());
+    }
+
+    [Fact]
+    public async Task Create_OnUserWithoutFirstName_ReturnsStatusCode400()
+    {
+        // Arrange
+        var newUser = UsersFixture.GetTestUserWithoutFirstName();
+        var mockUserRepository = new Mock<IUserRepository>();
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Create(newUser);
+
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+        var objectResult = (BadRequestObjectResult)result;
+        objectResult.StatusCode.Should().Be(400);
+    }
+
+    [Fact]
+    public async Task Create_OnUserWithAgeZero_ReturnsStatusCode400()
+    {
+        // Arrange
+        var newUser = UsersFixture.GetTestUserWithAgeZero();
+        var mockUserRepository = new Mock<IUserRepository>();
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Create(newUser);
+
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+        var objectResult = (BadRequestObjectResult)result;
+        objectResult.StatusCode.Should().Be(400);
+        
+    }
+
+    [Fact]
+    public async Task Create_OnSuccess_InvokesRepositorySaveChangesAsync()
+    {
+        // Arrange
+        var newUser = UsersFixture.GetTestUser(Guid.NewGuid());
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.AddUser(newUser));
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Create(newUser);
+
+        // Assert
+        mockUserRepository.Verify(service => service.SaveChangesAsync(), Times.Exactly(1));
+    }
 }
