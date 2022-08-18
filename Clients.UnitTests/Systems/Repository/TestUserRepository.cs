@@ -53,5 +53,27 @@ namespace Clients.UnitTests.Systems.Repository
             // Assert
             result.Should().BeOfType<User>();
         }
+
+        [Fact]
+        public async Task AddUser_Should_AddUser()
+        {
+            // Arrange
+            var mockUsers = UsersFixture.GetTestUsers();
+            _context.Users.AddRange(mockUsers);
+            _context.SaveChanges();
+
+            var expectedCount = mockUsers.Count + 1;
+
+            var newUser = UsersFixture.GetTestUser(Guid.NewGuid());
+
+            var sut = new UserRepository(_context);
+
+            // Act
+            sut.AddUser(newUser);
+            await sut.SaveChangesAsync();
+
+            // Assert
+            _context.Users.Count().Should().Be(expectedCount);
+        }
     }
 }
