@@ -5,6 +5,7 @@ using Moq;
 using Clients.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using FluentAssertions;
+using Clients.UnitTests.Fixtures;
 
 namespace Clients.UnitTests.Systems.Controllers;
 
@@ -17,15 +18,7 @@ public class TestUsersControllers
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
             .Setup(service => service.GetUsers())
-            .ReturnsAsync(new List<User>() {
-                new User {
-                    id = Guid.NewGuid(),
-                    firstName = "Gustavo",
-                    surname = "Lima",
-                    age = 15,
-                    creationDate = DateTime.Now
-                }
-            });
+            .ReturnsAsync(UsersFixture.GetTestUsers());
 
         var sut = new UsersController(mockUserRepository.Object);
 
@@ -62,14 +55,7 @@ public class TestUsersControllers
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
             .Setup(service => service.GetUsers())
-            .ReturnsAsync(new List<User>() {
-                new User {
-                    id = Guid.NewGuid(),
-                    firstName = "Gustavo",
-                    surname = "Lima",
-                    age = 15,
-                    creationDate = DateTime.Now
-                }});
+            .ReturnsAsync(UsersFixture.GetTestUsers());
 
         var sut = new UsersController(mockUserRepository.Object);
 
