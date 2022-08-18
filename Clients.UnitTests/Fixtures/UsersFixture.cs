@@ -38,5 +38,21 @@ namespace Clients.UnitTests.Fixtures
                 creationDate = DateTime.Now
             };
         }
+
+        public static User GetTestUserWithoutFirstName() {
+            return new User() {
+                surname = "some surname",
+                age = 78
+            };
+        }
+
+        public static User GetTestUserWithAgeZero() {
+            return new User() {
+                firstName = "Some name",
+                surname = "some surname",
+                age = 0
+            };
+        }
     }
+    
 }
