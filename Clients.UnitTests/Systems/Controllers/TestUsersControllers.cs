@@ -87,4 +87,48 @@ public class TestUsersControllers
         var objectResult = (NotFoundResult)result;
         objectResult.StatusCode.Should().Be(404);
     }
+
+    [Fact]
+    public async Task Get_OnSuccess_ReturnsAUser()
+    {
+        // Arrange
+        var userGuid = Guid.NewGuid();
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(UsersFixture.GetTestUser(userGuid));
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Get(userGuid);
+
+        // Assert
+        result.Should().BeOfType<OkObjectResult>();
+        
+        var objectResult = (OkObjectResult)result;
+        objectResult.StatusCode.Should().Be(200);
+        objectResult.Value.Should().BeOfType<User>();
+    }
+
+    [Fact]
+    public async Task Get_OnNoUserFound_ReturnsStatusCode404()
+    {
+        // Arrange
+        var userGuid = Guid.NewGuid();
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(() => null);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Get(userGuid);
+
+        // Assert
+        result.Should().BeOfType<NotFoundObjectResult>();
+        var objectResult = (NotFoundObjectResult)result;
+        objectResult.StatusCode.Should().Be(404);
+    }
 }
