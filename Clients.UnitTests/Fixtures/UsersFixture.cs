@@ -28,5 +28,15 @@ namespace Clients.UnitTests.Fixtures
                     creationDate = DateTime.Now
                 }
             };
+
+        public static User GetTestUser(Guid _id) {
+            return new User() {
+                id = _id,
+                firstName = "Some name",
+                surname = "some surname",
+                age = 78,
+                creationDate = DateTime.Now
+            };
+        }
     }
 }

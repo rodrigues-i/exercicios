@@ -27,7 +27,7 @@ public class UsersController: ControllerBase
         
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<User>> Get(Guid id)
+    public async Task<ActionResult> Get(Guid id)
     {
         var Dbuser = await _repository.GetUserById(id);
         if(Dbuser == null)

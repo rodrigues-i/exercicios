@@ -1,3 +1,4 @@
+using System;
 using Clients.API.Repository;
 using Clients.API.Models;
 
@@ -64,6 +65,7 @@ public class TestUsersControllers
 
         // Assert
         result.Should().BeOfType<OkObjectResult>();
+
         var objectResult = (OkObjectResult)result;
         objectResult.Value.Should().BeOfType<List<User>>();
     }
