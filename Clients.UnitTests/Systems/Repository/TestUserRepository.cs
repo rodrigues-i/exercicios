@@ -75,5 +75,31 @@ namespace Clients.UnitTests.Systems.Repository
             // Assert
             _context.Users.Count().Should().Be(expectedCount);
         }
+
+        [Fact]
+        public async Task UpdateUser_ShouldUpdate_AnUser()
+        {
+            // Arrange
+            var mockUsers = UsersFixture.GetTestUsers();
+            _context.Users.AddRange(mockUsers);
+            _context.SaveChanges();
+
+            var userToBeModified = mockUsers[1];
+            var originalAge = userToBeModified.age;
+
+            // Act
+            var sut = new UserRepository(_context);
+            var DbUser = await sut.GetUserById(userToBeModified.id);
+
+            DbUser.age = 68;
+            sut.UpdateUser(DbUser);
+            await sut.SaveChangesAsync();
+
+            // Assert
+            var user = await sut.GetUserById(DbUser.id);
+            var currentAge = user.age;
+
+            currentAge.Should().NotBe(originalAge);
+        }
     }
 }
