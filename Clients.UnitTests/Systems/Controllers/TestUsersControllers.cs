@@ -363,4 +363,129 @@ public class TestUsersControllers
         mockUserRepository.Verify(service => service.SaveChangesAsync(), Times.Once());
 
     }
+
+    [Fact]
+    public async Task Delete_OnSuccess_ReturnStatusCode200()
+    {
+        // Arrange
+        var mockUser = UsersFixture.GetTestUsers()[1];
+        var userGuid = mockUser.id;
+
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(mockUser);
+        mockUserRepository
+            .Setup(service => service.DeleteUser(mockUser));
+        mockUserRepository
+            .Setup(service => service.SaveChangesAsync())
+            .ReturnsAsync(true);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Delete(userGuid);
+
+        // Assert
+        result.Should().BeOfType<OkObjectResult>();
+        var objectResult = (OkObjectResult)result;
+        objectResult.StatusCode.Should().Be(200);
+    }
+
+    [Fact]
+    public async Task Delete_OnNoUserFound_ReturnsStatusCode400()
+    {
+        // Arrange
+        var mockUser = UsersFixture.GetTestUsers()[0];
+        var userGuid = mockUser.id;
+
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(() => null);
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Delete(userGuid);
+
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+        var objectResult = (BadRequestObjectResult) result;
+        objectResult.StatusCode.Should().Be(400);
+
+    }
+
+    [Fact]
+    public async Task Delete_OnSuccess_InvokesRepositoryDeleteUser()
+    {
+         // Arrange
+        var mockUser = UsersFixture.GetTestUsers()[1];
+        var userGuid = mockUser.id;
+
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(mockUser);
+        mockUserRepository
+            .Setup(service => service.DeleteUser(mockUser));
+        mockUserRepository
+            .Setup(service => service.SaveChangesAsync())
+            .ReturnsAsync(true);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Delete(userGuid);
+
+        // Assert
+        mockUserRepository.Verify(service => service.DeleteUser(mockUser), Times.Exactly(1));
+    }
+
+    [Fact]
+    public async Task Delete_OnUserNotFound_DoesNotInvokeRepositoryDeleteUser()
+    {
+        // Arrange
+        var mockUser = UsersFixture.GetTestUsers()[0];
+        var userGuid = mockUser.id;
+
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(() => null);
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Delete(userGuid);
+
+        // Assert
+        mockUserRepository.Verify(service => service.DeleteUser(mockUser), Times.Never());
+    }
+
+    [Fact]
+    public async Task Delete_OnSuccess_InvokesRepositySaveChangesAsync()
+    {
+         // Arrange
+        var mockUser = UsersFixture.GetTestUsers()[1];
+        var userGuid = mockUser.id;
+
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(mockUser);
+        mockUserRepository
+            .Setup(service => service.DeleteUser(mockUser));
+        mockUserRepository
+            .Setup(service => service.SaveChangesAsync())
+            .ReturnsAsync(true);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Delete(userGuid);
+
+        // Assert
+        mockUserRepository.Verify(service => service.SaveChangesAsync(), Times.Exactly(1));
+    }
 }
