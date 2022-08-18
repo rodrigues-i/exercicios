@@ -36,5 +36,22 @@ namespace Clients.UnitTests.Systems.Repository
             result.Should().BeOfType<List<User>>();
         }
 
+        [Fact]
+        public async Task GetUserById_ShouldReturn_User_Object()
+        {
+            // Arrange
+            var mockUsers = UsersFixture.GetTestUsers();
+            _context.Users.AddRange(mockUsers);
+            _context.SaveChanges();
+
+            var mockUser = mockUsers[0];
+            var sut = new UserRepository(_context);
+
+            // Act
+            var result = await sut.GetUserById(mockUser.id);
+
+            // Assert
+            result.Should().BeOfType<User>();
+        }
     }
 }
