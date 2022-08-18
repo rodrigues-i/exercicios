@@ -57,7 +57,7 @@ public class UsersController: ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<User>> Update(Guid id, User user)
+    public async Task<ActionResult> Update(Guid id, User user)
     {
         if(user.age == 0)
             return BadRequest("Attribute age is required");

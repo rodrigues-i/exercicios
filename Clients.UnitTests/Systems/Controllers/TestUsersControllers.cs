@@ -227,4 +227,140 @@ public class TestUsersControllers
         // Assert
         mockUserRepository.Verify(service => service.SaveChangesAsync(), Times.Exactly(1));
     }
+
+    [Fact]
+    public async Task Update_OnSuccess_ReturnsStatusCode200()
+    {
+        // Arrange
+        var userGuid = Guid.NewGuid();
+        var newUser = UsersFixture.GetTestUser(userGuid);
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(UsersFixture.GetTestUsers()[0]);
+        mockUserRepository
+            .Setup(service => service.UpdateUser(newUser));
+        mockUserRepository
+            .Setup(service => service.SaveChangesAsync())
+            .ReturnsAsync(true);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Update(userGuid, newUser);
+
+        // Assert
+        result.Should().BeOfType<OkObjectResult>();
+        var objectResult = (OkObjectResult)result;
+        objectResult.StatusCode.Should().Be(200);
+    }
+
+    [Fact]
+    public async Task Update_OnUserWithoutFirstName_ReturnStatusCode400()
+    {
+        var userGuid = Guid.NewGuid();
+        var newUser = UsersFixture.GetTestUserWithoutFirstName();
+        var mockUserRepository = new Mock<IUserRepository>();
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Update(userGuid, newUser);
+
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+        var objectResult = (BadRequestObjectResult)result;
+        objectResult.StatusCode.Should().Be(400);
+    }
+
+    [Fact]
+    public async Task Update_OnUserWithAgeZero_ReturnsStatusCode400()
+    {
+        // Arrange
+        var userGuid = Guid.NewGuid();
+        var newUser = UsersFixture.GetTestUserWithAgeZero();
+        var mockUserRepository = new Mock<IUserRepository>();
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Update(userGuid, newUser);
+
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+        var objectResult = (BadRequestObjectResult)result;
+        objectResult.StatusCode.Should().Be(400);
+    }
+
+    [Fact]
+    public async Task Update_OnNoUserFound_ReturnsStatusCode400()
+    {
+        // Arrange
+        var userGuid = Guid.NewGuid();
+        var newUser = UsersFixture.GetTestUser(userGuid);
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(() => null);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        var result = await sut.Update(userGuid, newUser);
+
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+        var objectResult = (BadRequestObjectResult)result;
+        objectResult.StatusCode.Should().Be(400);
+    }
+
+    [Fact]
+    public async Task Update_OnSuccess_InvokesRepositoryUpdateUser()
+    {
+         // Arrange
+        var newUser = UsersFixture.GetTestUsers()[0];
+        var userGuid = newUser.id;
+        
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(newUser);
+        mockUserRepository
+            .Setup(service => service.UpdateUser(newUser));
+        
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Update(userGuid, newUser);
+
+        // Assert
+        mockUserRepository.Verify(service => service.UpdateUser(newUser), Times.Exactly(1));
+    }
+
+    [Fact]
+    public async Task Update_OnSuccess_InvokesSaveChangesAsync()
+    {
+        // Arrange
+        var newUser = UsersFixture.GetTestUsers()[0];
+        var userGuid = newUser.id;
+
+        var mockUserRepository = new Mock<IUserRepository>();
+        mockUserRepository
+            .Setup(service => service.GetUserById(userGuid))
+            .ReturnsAsync(newUser);
+        mockUserRepository
+            .Setup(service => service.UpdateUser(newUser));
+        mockUserRepository
+            .Setup(service => service.SaveChangesAsync())
+            .ReturnsAsync(true);
+
+        var sut = new UsersController(mockUserRepository.Object);
+
+        // Act
+        await sut.Update(userGuid, newUser);
+
+        // Assert
+        mockUserRepository.Verify(service => service.SaveChangesAsync(), Times.Once());
+
+    }
 }
