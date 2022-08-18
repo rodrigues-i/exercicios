@@ -11,8 +11,24 @@ public class UserRepository : IUserRepository
     public UserRepository(DataContext context)
     {
         _context = context;
-        
+
     }
+
+    public async Task<List<User>> GetUsers()
+    {
+        return await _context.Users.ToListAsync();
+    }
+
+    public async Task<User?> GetUserById(Guid id)
+    {
+        return await _context.Users.FindAsync(id);
+    }
+
+    public void UpdateUser(User user)
+    {
+        _context.Update(user);
+    }
+
     public void AddUser(User user)
     {
         _context.Add(user);
@@ -23,23 +39,8 @@ public class UserRepository : IUserRepository
         _context.Remove(user);
     }
 
-    public async Task<User?> GetUserById(Guid id)
-    {
-        return await _context.Users.FindAsync(id);
-    }
-
-    public async Task<List<User>> GetUsers()
-    {
-        return await _context.Users.ToListAsync();
-    }
-
     public async Task<bool> SaveChangesAsync()
     {
         return await _context.SaveChangesAsync() > 0;
-    }
-
-    public void UpdateUser(User user)
-    {
-        _context.Update(user);
     }
 }
