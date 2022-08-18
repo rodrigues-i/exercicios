@@ -101,5 +101,25 @@ namespace Clients.UnitTests.Systems.Repository
 
             currentAge.Should().NotBe(originalAge);
         }
+
+        [Fact]
+        public async Task DeleteUser_ShouldRemoveUser()
+        {
+            // Arrange 
+            var mockUsers = UsersFixture.GetTestUsers();
+            _context.Users.AddRange(mockUsers);
+            _context.SaveChanges();
+
+            var userToBeDelete = mockUsers[0];
+
+            var expectedCount = mockUsers.Count - 1;
+            var sut = new UserRepository(_context);
+
+            // Act
+            sut.DeleteUser(userToBeDelete);
+            await sut.SaveChangesAsync();
+
+            _context.Users.Count().Should().Be(expectedCount);
+        }
     }
 }
