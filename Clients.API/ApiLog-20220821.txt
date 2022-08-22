@@ -1,0 +1,6 @@
+2022-08-21 16:22:13.008 -03:00 [WRN] Error on deleting user, there is no user with id "08da83a2-e75b-420a-8581-4a92f166131c"
+2022-08-21 16:22:28.841 -03:00 [INF] Deleted user {"id":"08da83a2-e75b-420a-8581-4a92f166131b","firstName":"Leandro","surname":"Alcântara","age":63,"creationDate":"2022-08-21T15:28:11.4261640","$type":"User"}
+2022-08-21 16:23:25.645 -03:00 [WRN] Error on updating user with id "08da83a2-01cf-4cac-868b-e80d747ffb87", the attribute age is required
+2022-08-21 16:23:46.018 -03:00 [INF] Updated user {"id":"08da83a2-01cf-4cac-868b-e80d747ffb87","firstName":"Jorge","surname":"Nunes","age":39,"creationDate":"2022-08-21T15:21:46.3458000","$type":"User"}
+2022-08-21 16:24:50.884 -03:00 [WRN] Error on creating new user, the attribute age is required
+2022-08-21 16:25:04.896 -03:00 [INF] Created user {"id":"08da83aa-d9d5-4475-8247-1db73d7f4cc3","firstName":"Alex","surname":"Albuquerque","age":39,"creationDate":"2022-08-21T16:25:04.7827727-03:00","$type":"User"}

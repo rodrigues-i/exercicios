@@ -1,6 +1,8 @@
+using System.Net.Sockets;
 using Clients.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Clients.API.Repository;
+using Serilog;
 
 namespace Clients.API.Controllers;
 
@@ -19,9 +21,10 @@ public class UsersController: ControllerBase
     public async Task<ActionResult> GetAll()
     {
         var users = await _repository.GetUsers();
-        if(!users.Any())
+        if(!users.Any()) {
             return NotFound();
-            
+        }
+        
         return Ok(users);
     }
         
@@ -30,8 +33,10 @@ public class UsersController: ControllerBase
     public async Task<ActionResult> Get(Guid id)
     {
         var Dbuser = await _repository.GetUserById(id);
-        if(Dbuser == null)
+        if(Dbuser == null) {
             return NotFound("User not found");
+        }
+        
         
         return Ok(Dbuser);
     }
@@ -40,9 +45,15 @@ public class UsersController: ControllerBase
     public async Task<IActionResult> Create(User user)
     {
         if(user.age == 0)
+        {
+            Log.Warning("Error on creating new user, the attribute age is required");
             return BadRequest("Attribute age is required");
+        }
         else if(user.firstName == null || user.firstName.Trim() == "")
+        {
+            Log.Warning("Error on creating new user, the attribute firstName is required");
             return BadRequest("Attribute firstName is required");
+        }
 
         user.firstName = user.firstName.Trim();
         if(user.surname != null)
@@ -50,6 +61,8 @@ public class UsersController: ControllerBase
         
         user.creationDate = DateTime.Now;
         _repository.AddUser(user);
+
+        Log.Information("Created user {@User}", user);
         
         return await _repository.SaveChangesAsync()
         ? Ok("User created successfully")
@@ -60,13 +73,22 @@ public class UsersController: ControllerBase
     public async Task<ActionResult> Update(Guid id, User user)
     {
         if(user.age == 0)
+        {
+            Log.Warning("Error on updating user with id {id}, the attribute age is required", id);
             return BadRequest("Attribute age is required");
+        }
         else if(user.firstName == null || user.firstName.Trim() == "")
+        {
+            Log.Warning("Error on updating user with id {id}, the attribute firstName is required", id);
             return BadRequest("Attribute firstName is required");
+        }
 
         var Dbuser = await _repository.GetUserById(id);
         if(Dbuser == null)
+        {
+            Log.Warning("Error on updating user, there is no user with id {id}", id);
             return BadRequest("User not found");
+        }
 
         user.firstName = user.firstName.Trim();
         if(user.surname != null)
@@ -77,6 +99,7 @@ public class UsersController: ControllerBase
         Dbuser.age = user.age == 0 ? Dbuser.age : user.age;
 
          _repository.UpdateUser(Dbuser);
+         Log.Information("Updated user {@User}", Dbuser);
 
          return await _repository.SaveChangesAsync()
          ? Ok("User updated successfully")
@@ -89,9 +112,13 @@ public class UsersController: ControllerBase
     {
        var Dbuser = await _repository.GetUserById(id);
        if(Dbuser == null)
-            return BadRequest("User not found");
+       {
+            Log.Warning("Error on deleting user, there is no user with id {id}", id);
+            return BadRequest($"User with id {id} not found");
+       }
         
         _repository.DeleteUser(Dbuser);
+        Log.Information("Deleted user {@User}", Dbuser);
 
         return await _repository.SaveChangesAsync()
             ? Ok("User successfully removed")

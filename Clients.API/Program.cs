@@ -1,6 +1,7 @@
 using Clients.API.Data;
 using Clients.API.Repository;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.File("/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/ApiLog-.txt",
+        rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
