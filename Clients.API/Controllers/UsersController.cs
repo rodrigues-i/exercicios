@@ -61,12 +61,17 @@ public class UsersController: ControllerBase
         
         user.creationDate = DateTime.Now;
         _repository.AddUser(user);
-
-        Log.Information("Created user {@User}", user);
         
-        return await _repository.SaveChangesAsync()
-        ? Ok("User created successfully")
-        : BadRequest("Error while trying to add new user");
+        // return await _repository.SaveChangesAsync()
+        // ? Ok("User created successfully")
+        // : BadRequest("Error while trying to add new user");
+        if(!await _repository.SaveChangesAsync())
+        {
+            return BadRequest("Error while trying to add new user");
+        }
+        
+        Log.Information("Created user {@User}", user);
+        return Ok("User created successfully");
     }
 
     [HttpPut("{id}")]
