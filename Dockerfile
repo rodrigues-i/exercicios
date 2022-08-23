@@ -9,6 +9,7 @@ RUN dotnet publish "./Clients.API/Clients.API.csproj" -c release -o /app --no-re
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app .
+RUN mkdir /app/logs
 
 EXPOSE 5000
 
