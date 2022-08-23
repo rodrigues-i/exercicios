@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
-    .WriteTo.File("/home/rodrigues/Documentos/projetos-c#/CrudClientes/Clients.API/ApiLog-.txt",
+    .WriteTo.File("/app/ApiLog-.txt",
         rollingInterval: RollingInterval.Day)
     .CreateLogger();
 

@@ -1,0 +1,31 @@
+version: "3"
+
+networks:
+  mariadbNET:
+  apiNET:
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb_container
+    ports:
+      - "3306:3306"
+    networks:
+      - mariadbNET
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=mypass
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api_container
+    ports:
+      - "5000:80"
+    networks:
+      - mariadbNET
+      - apiNET
+    environment:
+      - DBHOST=mysql
+    depends_on:
+      - mariadb
