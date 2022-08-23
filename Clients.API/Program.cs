@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
-    .WriteTo.File("/app/ApiLog-.txt",
+    .WriteTo.File("/app/logs/ApiLog-.txt",
         rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
