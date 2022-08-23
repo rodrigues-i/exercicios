@@ -5,7 +5,7 @@ networks:
   apiNET:
 
 services:
-  mariadb:
+  database:
     image: mariadb
     container_name: mariadb_container
     ports:
@@ -26,6 +26,6 @@ services:
       - mariadbNET
       - apiNET
     environment:
-      - DBHOST=mysql
+      - DBHOST=database
     depends_on:
-      - mariadb
+      - database
