@@ -20,8 +20,16 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    new MySqlServerVersion(new Version(8, 0, 29)));
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MariaDbServerVersion(new Version(10, 9, 2)),
+        // Retry to connect in case of failure
+        options => options.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: System.TimeSpan.FromSeconds(60),
+            errorNumbersToAdd: null
+        )
+    );
 });
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -40,5 +48,21 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Create a database migration with ef core,
+// to ensure there is a database, whenever the application starts up
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<DataContext>();
+
+    if (context.Database.GetPendingMigrations().Any())
+    {
+        context.Database.Migrate();
+    }
+
+}
 
 app.Run();
