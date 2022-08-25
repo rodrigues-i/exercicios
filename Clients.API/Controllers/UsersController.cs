@@ -93,13 +93,14 @@ public class UsersController: ControllerBase
             return BadRequest("User not found");
         }
 
-        user.FirstName = user.FirstName.Trim();
+        Dbuser.FirstName = user.FirstName.Trim();
+
         if(user.Surname != null)
-            user.Surname = user.Surname.Trim();
+        {
+            Dbuser.Surname = user.Surname.Trim();
+        }
         
-        Dbuser.FirstName = user.FirstName ?? Dbuser.FirstName;
-        Dbuser.Surname = user.Surname ?? Dbuser.Surname;
-        Dbuser.Age = user.Age == 0 ? Dbuser.Age : user.Age;
+        Dbuser.Age = user.Age;
 
          _repository.UpdateUser(Dbuser);
          Log.Information("Updated user {@User}", Dbuser);
