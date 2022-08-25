@@ -71,7 +71,7 @@ public class TestUsersControllers
     }
 
     [Fact]
-    public async Task GetAll_OnNoUsersFound_ReturnsStatusCode404()
+    public async Task GetAll_OnNoUserFound_ReturnsStatusCode404()
     {
         // Arrange
         var mockUserRepository = new Mock<IUserRepository>();
@@ -83,8 +83,8 @@ public class TestUsersControllers
 
         // Act
         var result = await sut.GetAll();
-        result.Should().BeOfType<NotFoundResult>();
-        var objectResult = (NotFoundResult)result;
+        result.Should().BeOfType<NotFoundObjectResult>();
+        var objectResult = (NotFoundObjectResult)result;
         objectResult.StatusCode.Should().Be(404);
     }
 
