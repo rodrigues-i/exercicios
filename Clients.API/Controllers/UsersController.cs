@@ -22,7 +22,7 @@ public class UsersController: ControllerBase
     {
         var users = await _repository.GetUsers();
         if(!users.Any()) {
-            return NotFound();
+            return NotFound("There is no user in the database");
         }
         
         return Ok(users);
