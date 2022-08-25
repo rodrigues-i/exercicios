@@ -11,7 +11,7 @@ public class User
     public Guid Id {get; set;}
     [Required]
     public string FirstName {get; set;}
-    public string? Surname {get; set;}
+    public string Surname {get; set;}
     public int Age {get; set; }
 
     public DateTime CreationDate { get; set; }
