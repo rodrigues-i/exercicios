@@ -48,7 +48,7 @@ namespace Clients.UnitTests.Systems.Repository
             var sut = new UserRepository(_context);
 
             // Act
-            var result = await sut.GetUserById(mockUser.id);
+            var result = await sut.GetUserById(mockUser.Id);
 
             // Assert
             result.Should().BeOfType<User>();
@@ -85,19 +85,19 @@ namespace Clients.UnitTests.Systems.Repository
             _context.SaveChanges();
 
             var userToBeModified = mockUsers[1];
-            var originalAge = userToBeModified.age;
+            var originalAge = userToBeModified.Age;
 
             // Act
             var sut = new UserRepository(_context);
-            var DbUser = await sut.GetUserById(userToBeModified.id);
+            var DbUser = await sut.GetUserById(userToBeModified.Id);
 
-            DbUser.age = 68;
+            DbUser.Age = 68;
             sut.UpdateUser(DbUser);
             await sut.SaveChangesAsync();
 
             // Assert
-            var user = await sut.GetUserById(DbUser.id);
-            var currentAge = user.age;
+            var user = await sut.GetUserById(DbUser.Id);
+            var currentAge = user.Age;
 
             currentAge.Should().NotBe(originalAge);
         }

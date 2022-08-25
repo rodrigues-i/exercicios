@@ -319,7 +319,7 @@ public class TestUsersControllers
     {
          // Arrange
         var newUser = UsersFixture.GetTestUsers()[0];
-        var userGuid = newUser.id;
+        var userGuid = newUser.Id;
         
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
@@ -342,7 +342,7 @@ public class TestUsersControllers
     {
         // Arrange
         var newUser = UsersFixture.GetTestUsers()[0];
-        var userGuid = newUser.id;
+        var userGuid = newUser.Id;
 
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
@@ -369,7 +369,7 @@ public class TestUsersControllers
     {
         // Arrange
         var mockUser = UsersFixture.GetTestUsers()[1];
-        var userGuid = mockUser.id;
+        var userGuid = mockUser.Id;
 
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
@@ -397,7 +397,7 @@ public class TestUsersControllers
     {
         // Arrange
         var mockUser = UsersFixture.GetTestUsers()[0];
-        var userGuid = mockUser.id;
+        var userGuid = mockUser.Id;
 
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
@@ -421,7 +421,7 @@ public class TestUsersControllers
     {
          // Arrange
         var mockUser = UsersFixture.GetTestUsers()[1];
-        var userGuid = mockUser.id;
+        var userGuid = mockUser.Id;
 
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
@@ -447,7 +447,7 @@ public class TestUsersControllers
     {
         // Arrange
         var mockUser = UsersFixture.GetTestUsers()[0];
-        var userGuid = mockUser.id;
+        var userGuid = mockUser.Id;
 
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository
@@ -468,7 +468,7 @@ public class TestUsersControllers
     {
          // Arrange
         var mockUser = UsersFixture.GetTestUsers()[1];
-        var userGuid = mockUser.id;
+        var userGuid = mockUser.Id;
 
         var mockUserRepository = new Mock<IUserRepository>();
         mockUserRepository

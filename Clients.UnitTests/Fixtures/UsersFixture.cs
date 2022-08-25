@@ -7,50 +7,50 @@ namespace Clients.UnitTests.Fixtures
         public static List<User> GetTestUsers() =>
             new() {
                 new User {
-                    id = Guid.NewGuid(),
-                    firstName = "João",
-                    surname = "Silva",
-                    age = 28,
-                    creationDate = DateTime.Now
+                    Id = Guid.NewGuid(),
+                    FirstName = "João",
+                    Surname = "Silva",
+                    Age = 28,
+                    CreationDate = DateTime.Now
                 },
                 new User {
-                    id = Guid.NewGuid(),
-                    firstName = "Pedro",
-                    surname = "Oliveira",
-                    age = 56,
-                    creationDate = DateTime.Now
+                    Id = Guid.NewGuid(),
+                    FirstName = "Pedro",
+                    Surname = "Oliveira",
+                    Age = 56,
+                    CreationDate = DateTime.Now
                 },
                 new User {
-                    id = Guid.NewGuid(),
-                    firstName = "Raphael",
-                    surname = "Gomes",
-                    age = 44,
-                    creationDate = DateTime.Now
+                    Id = Guid.NewGuid(),
+                    FirstName = "Raphael",
+                    Surname = "Gomes",
+                    Age = 44,
+                    CreationDate = DateTime.Now
                 }
             };
 
         public static User GetTestUser(Guid _id) {
             return new User() {
-                id = _id,
-                firstName = "Some name",
-                surname = "some surname",
-                age = 78,
-                creationDate = DateTime.Now
+                Id = _id,
+                FirstName = "Some name",
+                Surname = "some surname",
+                Age = 78,
+                CreationDate = DateTime.Now
             };
         }
 
         public static User GetTestUserWithoutFirstName() {
             return new User() {
-                surname = "some surname",
-                age = 78
+                Surname = "some surname",
+                Age = 78
             };
         }
 
         public static User GetTestUserWithAgeZero() {
             return new User() {
-                firstName = "Some name",
-                surname = "some surname",
-                age = 0
+                FirstName = "Some name",
+                Surname = "some surname",
+                Age = 0
             };
         }
     }

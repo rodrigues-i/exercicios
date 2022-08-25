@@ -6,15 +6,14 @@ namespace Clients.API.Models;
 
 public class User
 {
-    // o id deveria ser uma string
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid id {get; set;}
+    public Guid Id {get; set;}
     [Required]
-    public string firstName {get; set;}
-    public string? surname {get; set;}
-    public int age {get; set; }
+    public string FirstName {get; set;}
+    public string? Surname {get; set;}
+    public int Age {get; set; }
 
-    public DateTime creationDate { get; set; }
+    public DateTime CreationDate { get; set; }
 
 }

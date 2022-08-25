@@ -44,27 +44,25 @@ public class UsersController: ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(User user)
     {
-        if(user.age == 0)
+        if(user.Age == 0)
         {
             Log.Warning("Error on creating new user, the attribute age is required");
             return BadRequest("Attribute age is required");
         }
-        else if(user.firstName == null || user.firstName.Trim() == "")
+        else if(user.FirstName == null || user.FirstName.Trim() == "")
         {
             Log.Warning("Error on creating new user, the attribute firstName is required");
             return BadRequest("Attribute firstName is required");
         }
 
-        user.firstName = user.firstName.Trim();
-        if(user.surname != null)
-            user.surname = user.surname.Trim();
+        user.FirstName = user.FirstName.Trim();
+        if(user.Surname != null)
+            user.Surname = user.Surname.Trim();
         
-        user.creationDate = DateTime.Now;
+        user.CreationDate = DateTime.Now;
         _repository.AddUser(user);
         
-        // return await _repository.SaveChangesAsync()
-        // ? Ok("User created successfully")
-        // : BadRequest("Error while trying to add new user");
+        
         if(!await _repository.SaveChangesAsync())
         {
             return BadRequest("Error while trying to add new user");
@@ -77,12 +75,12 @@ public class UsersController: ControllerBase
     [HttpPut("{id}")]
     public async Task<ActionResult> Update(Guid id, User user)
     {
-        if(user.age == 0)
+        if(user.Age == 0)
         {
             Log.Warning("Error on updating user with id {id}, the attribute age is required", id);
             return BadRequest("Attribute age is required");
         }
-        else if(user.firstName == null || user.firstName.Trim() == "")
+        else if(user.FirstName == null || user.FirstName.Trim() == "")
         {
             Log.Warning("Error on updating user with id {id}, the attribute firstName is required", id);
             return BadRequest("Attribute firstName is required");
@@ -95,13 +93,13 @@ public class UsersController: ControllerBase
             return BadRequest("User not found");
         }
 
-        user.firstName = user.firstName.Trim();
-        if(user.surname != null)
-            user.surname = user.surname.Trim();
+        user.FirstName = user.FirstName.Trim();
+        if(user.Surname != null)
+            user.Surname = user.Surname.Trim();
         
-        Dbuser.firstName = user.firstName ?? Dbuser.firstName;
-        Dbuser.surname = user.surname ?? Dbuser.surname;
-        Dbuser.age = user.age == 0 ? Dbuser.age : user.age;
+        Dbuser.FirstName = user.FirstName ?? Dbuser.FirstName;
+        Dbuser.Surname = user.Surname ?? Dbuser.Surname;
+        Dbuser.Age = user.Age == 0 ? Dbuser.Age : user.Age;
 
          _repository.UpdateUser(Dbuser);
          Log.Information("Updated user {@User}", Dbuser);
