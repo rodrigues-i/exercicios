@@ -6,7 +6,7 @@ networks:
 
 services:
   database:
-    image: mariadb
+    image: mariadb:10.9.2
     container_name: mariadb_container
     ports:
       - "3306:3306"
@@ -29,3 +29,4 @@ services:
       - DBHOST=database
     depends_on:
       - database
+    restart: on-failure:10
