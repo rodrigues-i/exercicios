@@ -60,6 +60,13 @@ public class UsersController: ControllerBase
             user.Surname = user.Surname.Trim();
         
         user.CreationDate = DateTime.Now;
+        
+        // Ignore id sent by the client
+        if(user.Id != Guid.Empty)
+        {
+            user.Id = Guid.Empty;
+        }
+
         _repository.AddUser(user);
         
         
