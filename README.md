@@ -53,7 +53,7 @@ dotnet test
 [Vídeo](https://www.youtube.com/watch?v=5I7t0YMT5vk) com demo do projeto
 
 
-## Exemplos
+## Imagens de Exemplo
 - Adicionando um usuário novo
 
 
