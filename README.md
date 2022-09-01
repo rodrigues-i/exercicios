@@ -1,5 +1,16 @@
 # Sistema Para Cadastrar Usuários
 
+## Tecnologias usadas
+Este projeto foi feito com as seguintes tecnologias:
+- Asp.net Core
+- Entity Framework Core
+- Docker
+- Docker compose
+- Imagem docker do banco de dados mariadb
+- XUnit
+- Moq
+- FluentAssertions
+
 
 ## Requisitos
 Para rodar este projeto, é necessário ter instalados na sua máquina os seguintes programas
@@ -11,12 +22,29 @@ Use o seguinte comando para executar este projeto
 ```
 docker-compose up
 ```
+Para parar a excução, utilize o comando:
+`
+Ctrl + C
+`
+ou, em outro terminal aberto no mesmo caminho:
+```
+docker-compose stop
+```
 
 Esse comando criará os containers especificados no arquivo `docker-compose.yaml` e os inicializará.
 
 
 Aṕos os containers serem criados, use um programa como postman ou insominia para fazer as requisições.
-Uma vez com o insomia ou postman aberto, vá para a url [http://localhost:5000/Users/](http://localhost:5000/Users) para interagir com a api rest.
+Uma vez com o insomia ou postman aberto, vá para a url [http://localhost:5000/Users](http://localhost:5000/Users) para interagir com a api rest.
+
+O projeto possui testes unítarios. Para executar os testes, use o seguinte comando no terminal:
+```
+dotnet test
+```
+
+## Demo
+[Vídeo](https://www.youtube.com/watch?v=5I7t0YMT5vk) com demo do projeto
+
 
 ## Exemplos
 - Adicionando um usuário novo
