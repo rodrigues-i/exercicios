@@ -1,4 +1,5 @@
 # Sistema Para Cadastrar Usuários
+Projeto criado para permitir o cadastro do usuário ao sistema
 
 ## Tecnologias usadas
 Este projeto foi feito com as seguintes tecnologias:
@@ -34,13 +35,19 @@ docker-compose stop
 Esse comando criará os containers especificados no arquivo `docker-compose.yaml` e os inicializará.
 
 
-Aṕos os containers serem criados, use um programa como postman ou insominia para fazer as requisições.
+Após os containers serem criados, use um programa como `postman` ou `insominia` para fazer as requisições.
 Uma vez com o insomia ou postman aberto, vá para a url [http://localhost:5000/Users](http://localhost:5000/Users) para interagir com a api rest.
 
-O projeto possui testes unítarios. Para executar os testes, use o seguinte comando no terminal:
+## Testes Unitários
+O projeto possui testes unitários para garantir uma maior qualidade no sistema, ficando assim mais fácil a constatação de possíveis bugs bugs. Para executar os testes, use o seguinte comando no terminal:
+
 ```
 dotnet test
 ```
+
+![Captura de tela de 2022-08-29 18-20-14](https://user-images.githubusercontent.com/76739275/188008038-04d78f03-e14d-4553-857a-2a418d1b6c4b.png)
+
+
 
 ## Demo
 [Vídeo](https://www.youtube.com/watch?v=5I7t0YMT5vk) com demo do projeto
