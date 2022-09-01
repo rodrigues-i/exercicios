@@ -39,7 +39,7 @@ Após os containers serem criados, use um programa como `postman` ou `insominia`
 Uma vez com o insomia ou postman aberto, vá para a url [http://localhost:5000/Users](http://localhost:5000/Users) para interagir com a api rest.
 
 ## Testes Unitários
-O projeto possui testes unitários para garantir uma maior qualidade no sistema, ficando assim mais fácil a constatação de possíveis bugs bugs. Para executar os testes, use o seguinte comando no terminal:
+O projeto possui testes unitários para garantir uma maior qualidade do sistema, ficando assim mais fácil a detecção de possíveis bugs. Para executar os testes, use o seguinte comando no terminal:
 
 ```
 dotnet test
