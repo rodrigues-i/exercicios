@@ -32,11 +32,11 @@ ou, em outro terminal aberto no mesmo caminho:
 docker-compose stop
 ```
 
-Esse comando criará os containers especificados no arquivo `docker-compose.yaml` e os inicializará.
+`docker-compose up` criará os containers especificados no arquivo `docker-compose.yaml` e os inicializará.
 
 
-Após os containers serem criados, use um programa como `postman` ou `insominia` para fazer as requisições.
-Uma vez com o insomia ou postman aberto, vá para a url [http://localhost:5000/Users](http://localhost:5000/Users) para interagir com a api rest.
+Após os containers serem criados, use um programa como `Postman` ou `Insomnia` para fazer as requisições http.
+Uma vez com o Insomnia ou Postman aberto, vá até a url [http://localhost:5000/Users](http://localhost:5000/Users) para interagir com a api rest.
 
 ## Testes Unitários
 O projeto possui testes unitários para garantir uma maior qualidade do sistema, ficando assim mais fácil a detecção de possíveis bugs. Para executar os testes, use o seguinte comando no terminal:
