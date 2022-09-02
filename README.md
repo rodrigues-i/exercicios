@@ -62,7 +62,7 @@ volumes:
 ```
 
 O nome antes do símbolo `:` refere-se ao nome da pasta na sua máquina, já o nome depois dele refere-se ao local no container docker, onde a api rest está rodando.
-Caso queira mudar o local onde os logs ficam salvos dentro do container docker, abra o arquivo `Program.cs`, que está no caminho `Clients.API/Program.cs` e altere a string do método `WriteTo.File`
+Caso queira mudar o local onde os logs ficam salvos dentro do container docker, abra o arquivo `Program.cs`, que está no caminho `Clients.API/Program.cs` e altere a string do método `WriteTo.File("/caminho-para-o-arquivo/nome-do-arquivo.txt")`
 
 ```
 Log.Logger = new LoggerConfiguration()
