@@ -19,7 +19,7 @@ Para rodar este projeto, é necessário ter instalados na sua máquina os seguin
 - Docker Compose
 
 ## Como executar este projeto
-Use o seguinte comando para executar este projeto
+Entre na pasta do projeto, onde está o arquivo `docker-compose.yaml` e então use o seguinte comando para executar o projeto
 ```
 docker-compose up
 ```
@@ -48,6 +48,31 @@ dotnet test
 ![Captura de tela de 2022-08-29 18-20-14](https://user-images.githubusercontent.com/76739275/188008038-04d78f03-e14d-4553-857a-2a418d1b6c4b.png)
 
 
+## Logs
+As requisições de http `Post`, `Put` e `Delete` geram logs que ficam salvos na pasta `/logs`, na raiz do projeto.
+Caso precise alterar o local onde os logs ficam salvos, abra o arquivo `docker-compose.yaml`, e altere o volume do serviço de nome `api`
+```
+volumes:
+      - ./logs:/app/logs
+```
+Por exemplo, caso tenha criada uma pasta de nome `arquivos-de-log` na raiz do projeto e queria salvar os logs nele, o volume ficará assim:
+```
+volumes:
+      - ./arquivos-de-log:/app/logs
+```
+
+O nome antes do símbolo `:` refere-se ao nome da pasta na sua máquina, já o nome depois dele refere-se ao local no container docker, onde a api rest está rodando.
+Caso queira mudar o local onde os logs ficam salvos dentro do container docker, abra o arquivo `Program.cs`, que está no caminho `CrudClientes/Clients.API/Program.cs` e altere a string do método `WriteTo.File`
+
+```
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.File("/app/logs/api_log-.txt",
+        rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+```
+Se você alterar o método `WriteTo.File`, precisará alterar o volume no arquivo docker-compose.yaml para que os arquivos de log gerados apareçam na pasta na sua máquina
 
 ## Demo
 [Vídeo](https://www.youtube.com/watch?v=5I7t0YMT5vk) com demo do projeto
