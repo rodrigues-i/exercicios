@@ -9,7 +9,7 @@ namespace Clients.Mobile.Services
 {
     public class UserApi
     {
-        const String URL = "http://172.17.224.1:5000/Users";
+        const String URL = "http://172.24.16.1:5000/Users";
 
         private HttpClient GetClient()
         {
