@@ -4,14 +4,15 @@
              x:Class="Clients.Mobile.MainPage">
 
     <StackLayout Padding="50">
-        <Label Text="Gerenciamento de Usuários"  FontSize="Large" HorizontalOptions="CenterAndExpand" />
+
 
         <Button Text="Buscar todos os usuários"
-               x:Name="MyButton"
+               x:Name="btLocalizar_Usuarios"
                 TextColor="White"
-               Clicked="MyButton_Clicked"
+               Clicked="btLocalizar_Usuarios_Clicked"
                BackgroundColor="Purple"
                HeightRequest="50" />
+
     </StackLayout>
 
 </ContentPage>
