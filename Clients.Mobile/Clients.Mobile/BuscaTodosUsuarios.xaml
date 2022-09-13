@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Clients.Mobile.BuscaTodosUsuarios">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Todos os usuários serão exibidos aqui!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="usersListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Margin="0,0,0,20">
+                                <Label Text="{Binding Id}" />
+                                <Label Text="{Binding FirstName}" />
+                                <Label Text="{Binding Surname}" />
+                                <Label Text="{Binding Age}" />
+                                <Label Text="{Binding CreationDate}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
