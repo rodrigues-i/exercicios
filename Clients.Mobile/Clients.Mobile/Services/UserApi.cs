@@ -9,7 +9,7 @@ namespace Clients.Mobile.Services
 {
     public class UserApi
     {
-        const String URL = "http://172.24.16.1:5000/Users";
+        const String URL = "http://192.168.1.105:5000/Users";
 
         private HttpClient GetClient()
         {
@@ -28,7 +28,10 @@ namespace Clients.Mobile.Services
             if(response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<User>>(content);
+                var result = JsonConvert.DeserializeObject<List<User>>(content);
+                
+
+                return result;
             }
 
             return new List<User>();
