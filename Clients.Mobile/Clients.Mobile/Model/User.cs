@@ -6,11 +6,11 @@ namespace Clients.Mobile.Model
 {
     public class User
     {
-        private Guid Id { get; }
-        private string FirstName { get; set; }
-        private string Surname { get; set; }
-        private int Age { get; set; }
-        private DateTime CreationDate { get; set; }
+        public Guid Id { get; set; }
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public int Age { get; set; }
+        public DateTime CreationDate { get; set; }
 
     }
 }
