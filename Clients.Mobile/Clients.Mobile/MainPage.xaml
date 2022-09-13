@@ -13,6 +13,12 @@
                BackgroundColor="Purple"
                HeightRequest="50" />
 
+        <Button Text="Criar novo usuário"
+                x:Name="btCriar_Usuario"
+                TextColor="White"
+                Clicked="btCriar_Usuario_Clicked"
+                BackgroundColor="Purple"
+                HeightRequest="50" />
     </StackLayout>
 
 </ContentPage>
