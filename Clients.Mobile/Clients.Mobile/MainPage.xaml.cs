@@ -1,23 +1,36 @@
 ﻿using Clients.Mobile.Model;
 using Clients.Mobile.Services;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace Clients.Mobile
 {
     public partial class MainPage : ContentPage
     {
-        private User user;
+        private List<User> users;
         private UserApi api;
         public MainPage()
         {
             InitializeComponent();
             api = new UserApi();
+
+            Title = "Gerenciamento de Usuários";
         }
 
-        private void MyButton_Clicked(object sender, EventArgs e)
+        private async void btLocalizar_Usuarios_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new BuscaTodosUsuarios());
+            try
+            {
+                users = await api.GetUsers();
+            }
+            catch(Exception error)
+            {
+                await DisplayAlert("Erro", error.Message, "Ok");
+            }
+
+            await Navigation.PushAsync(new BuscaTodosUsuarios(users));
         }
+
     }
 }
