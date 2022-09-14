@@ -65,5 +65,16 @@ namespace Clients.Mobile.Services
             return null;
 
         }
+
+        public async Task<HttpResponseMessage> UpdateUser(User user)
+        {
+            String dados = URL + "/" + user.Id;
+            string json = JsonConvert.SerializeObject(user);
+            HttpClient client = new HttpClient();
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync(dados, content);
+
+            return response;
+        }
     }
 }
