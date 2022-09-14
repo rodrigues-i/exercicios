@@ -76,5 +76,14 @@ namespace Clients.Mobile.Services
 
             return response;
         }
+
+        public async Task<HttpResponseMessage> DeleteUser(Guid id)
+        {
+            String dados = URL + "/" + id;
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.DeleteAsync(dados);
+
+            return response;
+        }
     }
 }
