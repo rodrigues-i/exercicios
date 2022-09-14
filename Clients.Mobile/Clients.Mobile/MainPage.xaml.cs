@@ -41,5 +41,10 @@ namespace Clients.Mobile
         {
             Navigation.PushAsync(new BuscaUsuarioPorId(api));
         }
+
+        private void btAtualiza_Usuario_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AtualizaUsuario(api));
+        }
     }
 }

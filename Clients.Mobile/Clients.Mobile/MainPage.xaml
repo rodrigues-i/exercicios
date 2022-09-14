@@ -26,6 +26,12 @@
                 BackgroundColor="Purple"
                 HeightRequest="50"
                 Clicked="btBusca_Usuario_Clicked" />
+        <Button Text="Atualizar Usuário"
+                x:Name="btAtualiza_Usuario"
+                TextColor="White"
+                BackgroundColor="Purple"
+                HeightRequest="50"
+                Clicked="btAtualiza_Usuario_Clicked" />
     </StackLayout>
 
 </ContentPage>
