@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Clients.Mobile.Services
@@ -35,6 +36,16 @@ namespace Clients.Mobile.Services
             }
 
             return new List<User>();
+        }
+
+        public async Task CreateUser(User user)
+        {
+            String dados = URL;
+            string json = JsonConvert.SerializeObject(user);
+            HttpClient client = new HttpClient();
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(dados, content);
+
         }
     }
 }
