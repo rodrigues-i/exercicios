@@ -46,5 +46,10 @@ namespace Clients.Mobile
         {
             Navigation.PushAsync(new AtualizaUsuario(api));
         }
+
+        private void btRemove_Usuario_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RemoveUsuario(api));
+        }
     }
 }

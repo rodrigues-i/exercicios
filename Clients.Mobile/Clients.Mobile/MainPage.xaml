@@ -32,6 +32,12 @@
                 BackgroundColor="Purple"
                 HeightRequest="50"
                 Clicked="btAtualiza_Usuario_Clicked" />
+        <Button Text="Remover Usuário"
+                x:Name="btRemove_Usuario"
+                TextColor="White"
+                BackgroundColor="Purple"
+                HeightRequest="50"
+                Clicked="btRemove_Usuario_Clicked" />
     </StackLayout>
 
 </ContentPage>
