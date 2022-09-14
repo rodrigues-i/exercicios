@@ -7,6 +7,11 @@
             <Entry x:Name="entFirstName" Placeholder="Digite o nome" />
             <Entry x:Name="entSurname" Placeholder="Digite o sobrenome" />
             <Entry x:Name="entAge" Placeholder="Digite a idade" Keyboard="Numeric" />
+            <Button x:Name="btCriaUsuario"
+                    Text="Criar Usuário"
+                    TextColor="White"
+                    BackgroundColor="Purple"
+                    Clicked="btCriaUsuario_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
