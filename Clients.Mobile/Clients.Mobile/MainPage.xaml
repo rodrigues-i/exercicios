@@ -19,6 +19,13 @@
                 Clicked="btCriar_Usuario_Clicked"
                 BackgroundColor="Purple"
                 HeightRequest="50" />
+
+        <Button Text="Buscar usuário por id"
+                x:Name="btBusca_Usuario"
+                TextColor="White"
+                BackgroundColor="Purple"
+                HeightRequest="50"
+                Clicked="btBusca_Usuario_Clicked" />
     </StackLayout>
 
 </ContentPage>
