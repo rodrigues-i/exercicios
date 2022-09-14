@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,23 @@ namespace Clients.Mobile.Services
             HttpClient client = new HttpClient();
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(dados, content);
+
+        }
+
+        public async Task<User> GetUser(Guid id)
+        {
+            String dados = URL + "/" + id;
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(dados);
+
+            if(response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                var user = JsonConvert.DeserializeObject<User>(content);
+                return user;
+            }
+
+            return null;
 
         }
     }
