@@ -1,6 +1,0 @@
-2022-08-27 13:28:16.847 +00:00 [INF] Created user {"Id":"08da882f-ff42-4bc3-845a-f023bb963635","FirstName":"Pedro","Surname":"Cavalcante","Age":37,"CreationDate":"2022-08-27T13:28:14.8941546+00:00","$type":"User"}
-2022-08-27 13:29:24.497 +00:00 [INF] Created user {"Id":"08da8830-286d-4e42-8887-2f111da1733b","FirstName":"João","Surname":"Oliveira","Age":52,"CreationDate":"2022-08-27T13:29:24.4410050+00:00","$type":"User"}
-2022-08-27 13:30:21.059 +00:00 [INF] Updated user {"Id":"08da882f-ff42-4bc3-845a-f023bb963635","FirstName":"João","Surname":"Oliveira","Age":52,"CreationDate":"2022-08-27T13:28:14.8941540","$type":"User"}
-2022-08-27 13:31:03.736 +00:00 [INF] Created user {"Id":"08da8830-6391-43fe-8aa2-4000f3b3843c","FirstName":"Guilherme","Surname":"Pereira","Age":19,"CreationDate":"2022-08-27T13:31:03.6579241+00:00","$type":"User"}
-2022-08-27 13:32:30.850 +00:00 [WRN] Error on updating user with id "08da8830-286d-4e42-8887-2f111da1733b", the attribute age is required
-2022-08-27 13:33:15.872 +00:00 [WRN] Error on deleting user, there is no user with id "08da8830-286d-4e42-8887-2f111da1733c"
