@@ -95,7 +95,7 @@ Se você alterar o método `WriteTo.File`, precisará alterar o volume no arquiv
 ![Captura de tela de 2022-08-29 18-02-26](https://user-images.githubusercontent.com/76739275/188004719-fcd0a2f4-5f7f-4a74-8bf5-2ae6ff00b2d0.png)
 
 ## Aplicativo Mobile
-Versão mobile da aplicação.
+Versão mobile da aplicação para a plataforma android.
 ### Tecnologias utilizadas
 - Xamarin.Forms
 
@@ -103,7 +103,7 @@ O aplicativo mobile consome os dados da api rest através de requisições http.
 
 ### Como executar o aplicativo
 
-Para executar o aplicativo mobile, e necessário o `Visual Studio` com suporte a desenvolvimento mobile.
+Para executar o aplicativo mobile é necessário o `Visual Studio` com suporte a desenvolvimento mobile.
 Certifiquese-se de que a aplicação asp.net core  e o banco de dados estão rodando em containers docker, e então vá até a aba `depurar` do Visual Studio e clique para executar o projeto.
 
 ### Imagens
