@@ -14,6 +14,13 @@
                                 <Label Text="{Binding Surname, StringFormat='Sobrenome: {0}'}" FontSize="14" />
                                 <Label Text="{Binding Age, StringFormat='Idade: {0}'}" />
                                 <Label Text="{Binding CreationDate, StringFormat='Data de Criação: {0}'}" FontSize="14" />
+                                <Button x:Name="btCopia_Id"
+                                        Text="Copiar id"
+                                        ClassId="{Binding Id}"
+                                        BackgroundColor="Purple"
+                                        TextColor="White"
+                                        Clicked="btCopia_Id_Clicked"
+                                        />
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
