@@ -9,11 +9,11 @@
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout Margin="0,0,0,20">
-                                <Label Text="{Binding Id}" />
-                                <Label Text="{Binding FirstName}" />
-                                <Label Text="{Binding Surname}" />
-                                <Label Text="{Binding Age}" />
-                                <Label Text="{Binding CreationDate}" />
+                                <Label Text="{Binding Id, StringFormat='Id: {0}'}" FontSize="14" />
+                                <Label Text="{Binding FirstName, StringFormat='Nome: {0}'}" FontSize="14" />
+                                <Label Text="{Binding Surname, StringFormat='Sobrenome: {0}'}" FontSize="14" />
+                                <Label Text="{Binding Age, StringFormat='Idade: {0}'}" />
+                                <Label Text="{Binding CreationDate, StringFormat='Data de Criação: {0}'}" FontSize="14" />
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
