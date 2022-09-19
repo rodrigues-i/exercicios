@@ -11,7 +11,7 @@ namespace Clients.Mobile.Services
 {
     public class UserApi
     {
-        const String URL = "http://192.168.1.105:5000/Users";
+        const String URL = "http://10.0.2.2:5000/Users";
 
         private HttpClient GetClient()
         {
