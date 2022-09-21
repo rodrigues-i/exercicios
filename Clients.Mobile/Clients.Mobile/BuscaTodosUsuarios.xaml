@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clients.Mobile.BuscaTodosUsuarios">
+    <ContentPage.Content>
+        <ListView x:Name="usersListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Margin="0,0,0,20">
+                                <Label Text="{Binding Id, StringFormat='Id: {0}'}" FontSize="14" />
+                                <Label Text="{Binding FirstName, StringFormat='Nome: {0}'}" FontSize="14" />
+                                <Label Text="{Binding Surname, StringFormat='Sobrenome: {0}'}" FontSize="14" />
+                                <Label Text="{Binding Age, StringFormat='Idade: {0}'}" />
+                                <Label Text="{Binding CreationDate, StringFormat='Data de Criação: {0}'}" FontSize="14" />
+                                <Button x:Name="btCopia_Id"
+                                        Text="Copiar id"
+                                        ClassId="{Binding Id}"
+                                        BackgroundColor="Purple"
+                                        TextColor="White"
+                                        Clicked="btCopia_Id_Clicked"
+                                        />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

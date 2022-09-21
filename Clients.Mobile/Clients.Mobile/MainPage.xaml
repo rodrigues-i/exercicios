@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clients.Mobile.MainPage">
+
+    <StackLayout Padding="50">
+
+
+        <Button Text="Buscar todos os usuários"
+               x:Name="btLocalizar_Usuarios"
+                TextColor="White"
+               Clicked="btLocalizar_Usuarios_Clicked"
+               BackgroundColor="Purple"
+               HeightRequest="50" />
+
+        <Button Text="Criar novo usuário"
+                x:Name="btCriar_Usuario"
+                TextColor="White"
+                Clicked="btCriar_Usuario_Clicked"
+                BackgroundColor="Purple"
+                HeightRequest="50" />
+
+        <Button Text="Buscar usuário por id"
+                x:Name="btBusca_Usuario"
+                TextColor="White"
+                BackgroundColor="Purple"
+                HeightRequest="50"
+                Clicked="btBusca_Usuario_Clicked" />
+        <Button Text="Atualizar Usuário"
+                x:Name="btAtualiza_Usuario"
+                TextColor="White"
+                BackgroundColor="Purple"
+                HeightRequest="50"
+                Clicked="btAtualiza_Usuario_Clicked" />
+        <Button Text="Remover Usuário"
+                x:Name="btRemove_Usuario"
+                TextColor="White"
+                BackgroundColor="Purple"
+                HeightRequest="50"
+                Clicked="btRemove_Usuario_Clicked" />
+    </StackLayout>
+
+</ContentPage>

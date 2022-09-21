@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clients.Mobile.AtualizaUsuario">
+    <ContentPage.Content>
+        <StackLayout x:Name="outerStack">
+            <StackLayout x:Name="innerStack1">
+                <Entry x:Name="entId"
+                       Placeholder="Digite o id"
+                       />
+                <Button x:Name="btBusca"
+                        Text="Buscar Usuário"
+                        BackgroundColor="Purple"
+                        TextColor="White"
+                        HeightRequest="50"
+                        Clicked="btBusca_Clicked"
+                        />
+            </StackLayout>
+            <StackLayout x:Name="innerStack2" IsVisible="false">
+                <Entry x:Name="entFirstName" />
+                <Entry x:Name="entSurname" />
+                <Entry x:Name="entAge" Keyboard="Numeric" />
+                <Button Text="Atualizar Usuário"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    HeightRequest="50"
+                    x:Name="btAtualiza_Usuario"
+                    Clicked="btAtualiza_Usuario_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
