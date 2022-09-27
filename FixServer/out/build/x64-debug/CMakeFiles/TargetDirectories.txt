@@ -1,0 +1,3 @@
+C:/Users/lucas/Programacao/C++/CmakeTutorials/FixServer/out/build/x64-debug/CMakeFiles/FixServer.dir
+C:/Users/lucas/Programacao/C++/CmakeTutorials/FixServer/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/lucas/Programacao/C++/CmakeTutorials/FixServer/out/build/x64-debug/CMakeFiles/rebuild_cache.dir

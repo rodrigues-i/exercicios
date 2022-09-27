@@ -1,0 +1,249 @@
+20220927-19:12:35.996000000 : Created session
+20220927-19:22:29.864000000 : Created session
+20220927-19:24:35.314000000 : Received logon request
+20220927-19:24:35.316000000 : Responding to logon request
+20220927-19:24:35.317000000 : MsgSeqNum too high, expecting 1 but received 74
+20220927-19:24:35.318000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-19:24:57.067000000 : MsgSeqNum too high, expecting 1 but received 75
+20220927-19:24:57.068000000 : Already sent ResendRequest FROM: 1 TO: 73.  Not sending another.
+20220927-19:25:11.503000000 : Sent test request TEST
+20220927-19:25:11.508000000 : MsgSeqNum too high, expecting 1 but received 76
+20220927-19:25:11.508000000 : Already sent ResendRequest FROM: 1 TO: 73.  Not sending another.
+20220927-19:25:27.079000000 : MsgSeqNum too high, expecting 1 but received 77
+20220927-19:25:27.079000000 : Already sent ResendRequest FROM: 1 TO: 73.  Not sending another.
+20220927-19:25:33.941000000 : Message 78 Rejected: Value is incorrect (out of range) for this tag:40
+20220927-19:25:47.836000000 : Timed out waiting for heartbeat
+20220927-19:25:47.836000000 : Disconnecting
+20220927-19:31:05.154000000 : Received logon request
+20220927-19:31:05.157000000 : Responding to logon request
+20220927-19:31:05.157000000 : MsgSeqNum too high, expecting 1 but received 79
+20220927-19:31:05.160000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-19:31:09.146000000 : Message 80 Rejected: Value is incorrect (out of range) for this tag:40
+20220927-19:31:27.186000000 : MsgSeqNum too high, expecting 1 but received 81
+20220927-19:31:27.187000000 : Already sent ResendRequest FROM: 1 TO: 78.  Not sending another.
+20220927-19:31:41.988000000 : Sent test request TEST
+20220927-19:31:41.994000000 : MsgSeqNum too high, expecting 1 but received 82
+20220927-19:31:41.994000000 : Already sent ResendRequest FROM: 1 TO: 78.  Not sending another.
+20220927-19:31:57.204000000 : MsgSeqNum too high, expecting 1 but received 83
+20220927-19:31:57.204000000 : Already sent ResendRequest FROM: 1 TO: 78.  Not sending another.
+20220927-19:32:17.295000000 : Timed out waiting for heartbeat
+20220927-19:32:17.296000000 : Disconnecting
+20220927-19:47:14.019000000 : Received logon request
+20220927-19:47:14.021000000 : Responding to logon request
+20220927-19:47:14.021000000 : MsgSeqNum too high, expecting 1 but received 84
+20220927-19:47:14.023000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-19:47:27.466000000 : MsgSeqNum too high, expecting 1 but received 85
+20220927-19:47:27.467000000 : Already sent ResendRequest FROM: 1 TO: 83.  Not sending another.
+20220927-19:47:27.992000000 : MsgSeqNum too high, expecting 1 but received 86
+20220927-19:47:27.992000000 : Already sent ResendRequest FROM: 1 TO: 83.  Not sending another.
+20220927-19:47:50.532000000 : Sent test request TEST
+20220927-19:47:50.537000000 : MsgSeqNum too high, expecting 1 but received 87
+20220927-19:47:50.537000000 : Already sent ResendRequest FROM: 1 TO: 83.  Not sending another.
+20220927-19:47:55.768000000 : MsgSeqNum too high, expecting 1 but received 88
+20220927-19:47:55.768000000 : Already sent ResendRequest FROM: 1 TO: 83.  Not sending another.
+20220927-19:47:57.491000000 : MsgSeqNum too high, expecting 1 but received 89
+20220927-19:47:57.492000000 : Already sent ResendRequest FROM: 1 TO: 83.  Not sending another.
+20220927-19:48:26.843000000 : Timed out waiting for heartbeat
+20220927-19:48:26.843000000 : Disconnecting
+20220927-19:50:24.661000000 : Created session
+20220927-19:50:32.030000000 : Received logon request
+20220927-19:50:32.033000000 : Responding to logon request
+20220927-19:50:32.033000000 : MsgSeqNum too high, expecting 1 but received 90
+20220927-19:50:32.036000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-19:50:57.552000000 : MsgSeqNum too high, expecting 1 but received 91
+20220927-19:50:57.552000000 : Already sent ResendRequest FROM: 1 TO: 89.  Not sending another.
+20220927-19:51:04.159000000 : MsgSeqNum too high, expecting 1 but received 92
+20220927-19:51:04.159000000 : Already sent ResendRequest FROM: 1 TO: 89.  Not sending another.
+20220927-19:51:08.173000000 : Sent test request TEST
+20220927-19:51:08.179000000 : MsgSeqNum too high, expecting 1 but received 93
+20220927-19:51:08.179000000 : Already sent ResendRequest FROM: 1 TO: 89.  Not sending another.
+20220927-19:51:25.077000000 : MsgSeqNum too high, expecting 1 but received 94
+20220927-19:51:25.078000000 : Already sent ResendRequest FROM: 1 TO: 89.  Not sending another.
+20220927-19:51:27.572000000 : MsgSeqNum too high, expecting 1 but received 95
+20220927-19:51:27.572000000 : Already sent ResendRequest FROM: 1 TO: 89.  Not sending another.
+20220927-19:51:44.492000000 : Timed out waiting for heartbeat
+20220927-19:51:44.492000000 : Disconnecting
+20220927-19:53:05.257000000 : Created session
+20220927-19:53:22.291000000 : Received logon request
+20220927-19:53:22.294000000 : Responding to logon request
+20220927-19:53:22.295000000 : MsgSeqNum too high, expecting 1 but received 96
+20220927-19:53:22.296000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-19:53:27.627000000 : MsgSeqNum too high, expecting 1 but received 97
+20220927-19:53:27.627000000 : Already sent ResendRequest FROM: 1 TO: 95.  Not sending another.
+20220927-19:53:34.134000000 : MsgSeqNum too high, expecting 1 but received 98
+20220927-19:53:34.134000000 : Already sent ResendRequest FROM: 1 TO: 95.  Not sending another.
+20220927-19:53:41.269000000 : MsgSeqNum too high, expecting 1 but received 99
+20220927-19:53:41.269000000 : Already sent ResendRequest FROM: 1 TO: 95.  Not sending another.
+20220927-19:53:54.846000000 : Initiated logout request
+20220927-19:53:56.860000000 : Timed out waiting for logout response
+20220927-19:53:56.860000000 : Disconnecting
+20220927-19:54:43.902000000 : Created session
+20220927-19:54:51.255000000 : Received logon request
+20220927-19:54:51.258000000 : Responding to logon request
+20220927-19:54:51.259000000 : MsgSeqNum too high, expecting 1 but received 100
+20220927-19:54:51.261000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-19:54:57.408000000 : MsgSeqNum too high, expecting 1 but received 101
+20220927-19:54:57.408000000 : Already sent ResendRequest FROM: 1 TO: 99.  Not sending another.
+20220927-19:54:57.643000000 : MsgSeqNum too high, expecting 1 but received 102
+20220927-19:54:57.644000000 : Already sent ResendRequest FROM: 1 TO: 99.  Not sending another.
+20220927-19:55:14.309000000 : Initiated logout request
+20220927-19:55:16.328000000 : Timed out waiting for logout response
+20220927-19:55:16.328000000 : Disconnecting
+20220927-21:01:28.227000000 : Created session
+20220927-21:01:46.877000000 : Received logon request
+20220927-21:01:46.880000000 : Responding to logon request
+20220927-21:01:46.881000000 : MsgSeqNum too high, expecting 1 but received 103
+20220927-21:01:46.883000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:01:58.782000000 : MsgSeqNum too high, expecting 1 but received 104
+20220927-21:01:58.783000000 : Already sent ResendRequest FROM: 1 TO: 102.  Not sending another.
+20220927-21:02:04.193000000 : MsgSeqNum too high, expecting 1 but received 105
+20220927-21:02:04.194000000 : Already sent ResendRequest FROM: 1 TO: 102.  Not sending another.
+20220927-21:02:22.995000000 : Sent test request TEST
+20220927-21:02:23.000000000 : MsgSeqNum too high, expecting 1 but received 106
+20220927-21:02:23.000000000 : Already sent ResendRequest FROM: 1 TO: 102.  Not sending another.
+20220927-21:02:28.808000000 : MsgSeqNum too high, expecting 1 but received 107
+20220927-21:02:28.809000000 : Already sent ResendRequest FROM: 1 TO: 102.  Not sending another.
+20220927-21:02:58.303000000 : Timed out waiting for heartbeat
+20220927-21:02:58.303000000 : Disconnecting
+20220927-21:21:44.808000000 : Created session
+20220927-21:21:52.740000000 : Received logon request
+20220927-21:21:52.743000000 : Responding to logon request
+20220927-21:21:52.743000000 : MsgSeqNum too high, expecting 1 but received 108
+20220927-21:21:52.746000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:22:02.254000000 : MsgSeqNum too high, expecting 1 but received 109
+20220927-21:22:02.255000000 : Already sent ResendRequest FROM: 1 TO: 107.  Not sending another.
+20220927-21:22:03.571000000 : MsgSeqNum too high, expecting 1 but received 110
+20220927-21:22:03.572000000 : Already sent ResendRequest FROM: 1 TO: 107.  Not sending another.
+20220927-21:22:28.323000000 : Sent test request TEST
+20220927-21:22:28.331000000 : MsgSeqNum too high, expecting 1 but received 111
+20220927-21:22:28.332000000 : Already sent ResendRequest FROM: 1 TO: 107.  Not sending another.
+20220927-21:22:32.277000000 : MsgSeqNum too high, expecting 1 but received 112
+20220927-21:22:32.278000000 : Already sent ResendRequest FROM: 1 TO: 107.  Not sending another.
+20220927-21:23:02.293000000 : MsgSeqNum too high, expecting 1 but received 113
+20220927-21:23:02.294000000 : Already sent ResendRequest FROM: 1 TO: 107.  Not sending another.
+20220927-21:23:04.533000000 : Timed out waiting for heartbeat
+20220927-21:23:04.534000000 : Disconnecting
+20220927-21:25:18.013000000 : Received logon request
+20220927-21:25:18.015000000 : Responding to logon request
+20220927-21:25:18.015000000 : MsgSeqNum too high, expecting 1 but received 114
+20220927-21:25:18.017000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:25:32.334000000 : MsgSeqNum too high, expecting 1 but received 115
+20220927-21:25:32.334000000 : Already sent ResendRequest FROM: 1 TO: 113.  Not sending another.
+20220927-21:25:38.275000000 : MsgSeqNum too high, expecting 1 but received 116
+20220927-21:25:38.276000000 : Already sent ResendRequest FROM: 1 TO: 113.  Not sending another.
+20220927-21:25:54.947000000 : Sent test request TEST
+20220927-21:25:54.952000000 : MsgSeqNum too high, expecting 1 but received 117
+20220927-21:25:54.952000000 : Already sent ResendRequest FROM: 1 TO: 113.  Not sending another.
+20220927-21:26:02.351000000 : MsgSeqNum too high, expecting 1 but received 118
+20220927-21:26:02.352000000 : Already sent ResendRequest FROM: 1 TO: 113.  Not sending another.
+20220927-21:26:30.223000000 : Timed out waiting for heartbeat
+20220927-21:26:30.223000000 : Disconnecting
+20220927-21:31:54.542000000 : Created session
+20220927-21:32:01.301000000 : Received logon request
+20220927-21:32:01.304000000 : Responding to logon request
+20220927-21:32:01.305000000 : MsgSeqNum too high, expecting 1 but received 119
+20220927-21:32:01.306000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:32:02.454000000 : MsgSeqNum too high, expecting 1 but received 120
+20220927-21:32:02.454000000 : Already sent ResendRequest FROM: 1 TO: 118.  Not sending another.
+20220927-21:32:07.666000000 : MsgSeqNum too high, expecting 1 but received 121
+20220927-21:32:07.667000000 : Already sent ResendRequest FROM: 1 TO: 118.  Not sending another.
+20220927-21:32:32.474000000 : MsgSeqNum too high, expecting 1 but received 122
+20220927-21:32:32.475000000 : Already sent ResendRequest FROM: 1 TO: 118.  Not sending another.
+20220927-21:32:37.125000000 : Sent test request TEST
+20220927-21:32:37.130000000 : MsgSeqNum too high, expecting 1 but received 123
+20220927-21:32:37.130000000 : Already sent ResendRequest FROM: 1 TO: 118.  Not sending another.
+20220927-21:34:33.701000000 : Created session
+20220927-21:34:45.727000000 : Received logon request
+20220927-21:34:45.731000000 : Responding to logon request
+20220927-21:34:45.731000000 : MsgSeqNum too high, expecting 1 but received 124
+20220927-21:34:45.734000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:35:02.532000000 : MsgSeqNum too high, expecting 1 but received 125
+20220927-21:35:02.533000000 : Already sent ResendRequest FROM: 1 TO: 123.  Not sending another.
+20220927-21:35:10.799000000 : MsgSeqNum too high, expecting 1 but received 126
+20220927-21:35:10.799000000 : Already sent ResendRequest FROM: 1 TO: 123.  Not sending another.
+20220927-21:35:21.238000000 : Sent test request TEST
+20220927-21:35:21.245000000 : MsgSeqNum too high, expecting 1 but received 127
+20220927-21:35:21.246000000 : Already sent ResendRequest FROM: 1 TO: 123.  Not sending another.
+20220927-21:35:32.543000000 : MsgSeqNum too high, expecting 1 but received 128
+20220927-21:35:32.544000000 : Already sent ResendRequest FROM: 1 TO: 123.  Not sending another.
+20220927-21:35:57.471000000 : Timed out waiting for heartbeat
+20220927-21:35:57.472000000 : Disconnecting
+20220927-21:40:21.181000000 : Created session
+20220927-21:41:01.122000000 : Received logon request
+20220927-21:41:01.124000000 : Responding to logon request
+20220927-21:41:01.124000000 : MsgSeqNum too high, expecting 1 but received 132
+20220927-21:41:01.128000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:41:24.109000000 : MsgSeqNum too high, expecting 1 but received 133
+20220927-21:41:24.109000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:28.871000000 : MsgSeqNum too high, expecting 1 but received 134
+20220927-21:41:28.871000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:30.999000000 : MsgSeqNum too high, expecting 1 but received 135
+20220927-21:41:30.999000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:32.044000000 : MsgSeqNum too high, expecting 1 but received 136
+20220927-21:41:32.044000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:33.122000000 : MsgSeqNum too high, expecting 1 but received 137
+20220927-21:41:33.123000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:33.882000000 : MsgSeqNum too high, expecting 1 but received 138
+20220927-21:41:33.882000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:35.618000000 : MsgSeqNum too high, expecting 1 but received 139
+20220927-21:41:35.618000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:37.011000000 : Sent test request TEST
+20220927-21:41:37.019000000 : MsgSeqNum too high, expecting 1 but received 140
+20220927-21:41:37.020000000 : Already sent ResendRequest FROM: 1 TO: 131.  Not sending another.
+20220927-21:41:44.076000000 : Initiated logout request
+20220927-21:41:46.101000000 : Timed out waiting for logout response
+20220927-21:41:46.101000000 : Disconnecting
+20220927-21:44:02.678000000 : Created session
+20220927-21:44:09.841000000 : Received logon request
+20220927-21:44:09.845000000 : Responding to logon request
+20220927-21:44:09.845000000 : MsgSeqNum too high, expecting 1 but received 141
+20220927-21:44:09.848000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:44:21.524000000 : MsgSeqNum too high, expecting 1 but received 142
+20220927-21:44:21.525000000 : Already sent ResendRequest FROM: 1 TO: 140.  Not sending another.
+20220927-21:44:28.952000000 : MsgSeqNum too high, expecting 1 but received 143
+20220927-21:44:28.952000000 : Already sent ResendRequest FROM: 1 TO: 140.  Not sending another.
+20220927-21:44:45.207000000 : Sent test request TEST
+20220927-21:44:45.214000000 : MsgSeqNum too high, expecting 1 but received 144
+20220927-21:44:45.214000000 : Already sent ResendRequest FROM: 1 TO: 140.  Not sending another.
+20220927-21:44:58.970000000 : MsgSeqNum too high, expecting 1 but received 145
+20220927-21:44:58.971000000 : Already sent ResendRequest FROM: 1 TO: 140.  Not sending another.
+20220927-21:45:05.538000000 : Message 146 Rejected: Tag specified without a value:11
+20220927-21:45:21.463000000 : Timed out waiting for heartbeat
+20220927-21:45:21.464000000 : Disconnecting
+20220927-21:46:31.911000000 : Created session
+20220927-21:46:59.978000000 : Received logon request
+20220927-21:46:59.981000000 : Responding to logon request
+20220927-21:46:59.982000000 : MsgSeqNum too high, expecting 1 but received 147
+20220927-21:46:59.984000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:47:03.082000000 : MsgSeqNum too high, expecting 1 but received 148
+20220927-21:47:03.083000000 : Already sent ResendRequest FROM: 1 TO: 146.  Not sending another.
+20220927-21:48:46.954000000 : Created session
+20220927-21:51:18.700000000 : Received logon request
+20220927-21:51:18.703000000 : Responding to logon request
+20220927-21:51:18.703000000 : MsgSeqNum too high, expecting 1 but received 149
+20220927-21:51:18.706000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-21:51:25.943000000 : MsgSeqNum too high, expecting 1 but received 150
+20220927-21:51:25.943000000 : Already sent ResendRequest FROM: 1 TO: 148.  Not sending another.
+20220927-21:51:29.102000000 : MsgSeqNum too high, expecting 1 but received 151
+20220927-21:51:29.102000000 : Already sent ResendRequest FROM: 1 TO: 148.  Not sending another.
+20220927-21:51:43.478000000 : Initiated logout request
+20220927-21:51:45.073000000 : Socket Error: Foi forçado o cancelamento de uma conexão existente pelo host remoto.
+
+20220927-21:51:45.073000000 : Disconnecting
+20220927-22:16:34.080000000 : Created session
+20220927-22:17:15.761000000 : Received logon request
+20220927-22:17:15.763000000 : Responding to logon request
+20220927-22:17:15.764000000 : MsgSeqNum too high, expecting 1 but received 152
+20220927-22:17:15.765000000 : Sent ResendRequest FROM: 1 TO: 0
+20220927-22:17:28.315000000 : MsgSeqNum too high, expecting 1 but received 153
+20220927-22:17:28.315000000 : Already sent ResendRequest FROM: 1 TO: 151.  Not sending another.
+20220927-22:17:30.004000000 : MsgSeqNum too high, expecting 1 but received 154
+20220927-22:17:30.004000000 : Already sent ResendRequest FROM: 1 TO: 151.  Not sending another.
+20220927-22:17:51.161000000 : MsgSeqNum too high, expecting 1 but received 155
+20220927-22:17:51.162000000 : Already sent ResendRequest FROM: 1 TO: 151.  Not sending another.
+20220927-22:17:51.255000000 : Sent test request TEST
+20220927-22:17:51.264000000 : MsgSeqNum too high, expecting 1 but received 156
+20220927-22:17:51.265000000 : Already sent ResendRequest FROM: 1 TO: 151.  Not sending another.
+20220927-22:17:56.280000000 : Initiated logout request
+20220927-22:17:58.296000000 : Timed out waiting for logout response
+20220927-22:17:58.296000000 : Disconnecting
